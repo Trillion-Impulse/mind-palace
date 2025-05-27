@@ -46,3 +46,25 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 브라우저가 HTML을 표시하기 전 누가 HTML을 만드는가에 따른 렌더링 전략
 
 ---
+
+# SQL
+
+## DDL
+- 데이터베이스 구조(테이블, 인덱스 등)를 정의하거나 변경하는 명령어
+- CREATE, ALTER, DROP, TRUNCATE
+
+### in MYSQL
+- AUTO_INCREMENT: 테이블의 특정 컬럼(주로 기본키)에 자동으로 1씩 증가하는 값을 부여할 때 사용
+
+## DML
+- 데이터(행)를 조회하거나 조작하는 명령어
+- SELECT, INSERT, UPDATE, DELETE
+
+### in MYSQL
+- LIMIT: SELECT 문에서 결과 행(row)의 개수를 제한할 때 사용
+
+## DCL
+- 데이터베이스 접근 권한을 제어하는 명령어
+- GRANT, REVOKE
+
+---
