@@ -55,6 +55,8 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 ### in MYSQL
 - AUTO_INCREMENT: 테이블의 특정 컬럼(주로 기본키)에 자동으로 1씩 증가하는 값을 부여할 때 사용
+    - CREATE할 때 선언 가능
+    - ALTER할 때 선언 혹은 값을 주어 시작 값으로 설정 가능
 
 ## DML
 - 데이터(행)를 조회하거나 조작하는 명령어
