@@ -71,4 +71,14 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 데이터베이스 접근 권한을 제어하는 명령어
 - GRANT, REVOKE
 
+## 그 밖에 MYSQL syntax
+
+### 명령어
+- 'DESC 테이블명': 테이블의 구조(스키마)를 확인
+    - 'DESCRIBE 테이블명' 동일
+    - 'VIEW'에도 사용 가능
+        - 'DESC 뷰명'
+- 'SHOW': 데이터베이스나 서버에 대한 정보(메타데이터)를 조회
+    - 구조, 설정, 상태 같은 시스템 정보를 조회
+
 ---
