@@ -82,3 +82,37 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     - 구조, 설정, 상태 같은 시스템 정보를 조회
 
 ---
+
+# OAuth
+
+## OAuth 2.0의 기본 구조
+- Resource Owner (자원 소유자)
+    - 보통 사용자. 자신의 데이터를 다른 애플리케이션이 접근하도록 허용
+    - 예: Google 캘린더
+- Client (클라이언트 애플리케이션)
+    - 사용자의 데이터에 접근하려는 제3자 애플리케이션
+    - 예: 일정 앱
+- Authorization Server (인증 서버)
+    - 사용자의 권한을 인증하고, 액세스 토큰을 발급하는 서버
+    - 예: Google, Facebook의 인증 서버
+- Resource Server (자원 서버)
+    - 보호된 데이터를 호스팅하는 서버
+    - 액세스 토큰을 이용해 데이터에 접근 가능
+
+## OAuth 2.0의 기본 흐름
+1. 사용자 인증 요청
+    - 클라이언트가 사용자를 인증 서버로 리디렉션 → 사용자는 로그인 및 권한 부여
+2. Authorization Code 발급
+    - 사용자가 권한을 승인하면 인증 서버가 클라이언트에게 authorization code를 전달
+3. Access Token 요청
+    - 클라이언트는 authorization code와 함께 인증 서버에 액세스 토큰을 요청
+4. Access Token 발급
+    - 인증 서버가 클라이언트에게 액세스 토큰을 반환
+5. 자원 접근
+    - 클라이언트는 액세스 토큰을 사용해 자원 서버의 사용자 데이터를 요청
+
+## OAuth 2.0의 특징
+- 액세스 토큰을 통해 자원 접근 제어
+- 사용자의 비밀번호 노출 없이 권한 위임 가능
+
+---
