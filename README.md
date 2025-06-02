@@ -45,7 +45,43 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 ### 결론
 - 브라우저가 HTML을 표시하기 전 누가 HTML을 만드는가에 따른 렌더링 전략
 
+
+## HTTP 메서드
+
+### GET
+- 서버에서 리소스(데이터)를 조회
+- 예: 웹페이지 접속
+
+### POST
+- 서버에 리소스(데이터)를 생성하거나 전송
+- 예: 회원 가입, 댓글 작성
+
+### PUT
+- 리소스를 전체 수정
+- 예: 사용자 정보 전체 업데이트
+
+### PATCH
+- 리소스를 부분 수정
+- 예: 비밀번호만 변경
+
+### DELETE
+- 리소스를 삭제
+- 예: 게시글 삭제
+
+### HEAD
+- GET과 유사하지만, 응답 본문 없이 헤더 정보만 요청
+- 예: 리소스 존재 여부 확인
+
+### OPTIONS
+- 서버가 지원하는 메서드 목록을 요청
+- 주로 CORS(Cross-Origin Resource Sharing) 사전 요청에서 사용
+- 예: 클라이언트가 POST 요청을 하기 전, 서버에 OPTIONS로 요청해서 Access-Control-Allow-* 헤더 확인
+
+<br>
+
 ---
+
+<br>
 
 # SQL
 
@@ -81,7 +117,11 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 'SHOW': 데이터베이스나 서버에 대한 정보(메타데이터)를 조회
     - 구조, 설정, 상태 같은 시스템 정보를 조회
 
+<br>
+
 ---
+
+<br>
 
 # OAuth
 
@@ -115,4 +155,8 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 액세스 토큰을 통해 자원 접근 제어
 - 사용자의 비밀번호 노출 없이 권한 위임 가능
 
+<br>
+
 ---
+
+<br>
