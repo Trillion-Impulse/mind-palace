@@ -109,6 +109,44 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 액세스 토큰을 통해 자원 접근 제어
 - 사용자의 비밀번호 노출 없이 권한 위임 가능
 
+## 보안
+
+### OWASP
+- Open Worldwide Application Security Project
+- 웹 애플리케이션 보안을 개선하기 위한 글로벌 비영리 단체
+
+#### OWASP Top 10 (2021)
+- A01:2021 - Broken Access Control
+    - 권한이 없는 사용자가 다른 사용자의 데이터나 기능에 접근할 수 있는 문제
+    - 예: URL 권한 우회, IDOR (Insecure Direct Object Reference), 기능 숨기기 실패 등
+- A02:2021 - Cryptographic Failures
+    - 민감한 데이터가 암호화되지 않거나 암호화가 취약
+    - 예: 민감 정보 평문 저장, HTTPS 미사용, 약한 암호 알고리즘 사용 (예: MD5)
+- A03:2021 - Injection
+    - 사용자 입력값이 서버 코드나 쿼리로 잘못 해석되어 실행됨
+    - 예: SQL Injection, XSS (Cross-Site Scripting), Command Injection, LDAP Injection, XML Injection
+- A04:2021 - Insecure Design
+    - 설계부터 보안이 충분히 고려되지 않아 구조적 결함 발생
+    - 예: 인증 로직 우회 가능, 비즈니스 논리상 보안 결함, 비정상적 접근 흐름 미제어
+- A05:2021 - Security Misconfiguration
+    - 서버, 프레임워크, 보안 설정의 오류
+    - 예: 디버그 모드 ON, 기본 비밀번호 미변경, 민감 정보가 노출된 에러 메시지
+- A06:2021 - Vulnerable and Outdated Components
+    - 보안 취약점이 있는 외부 라이브러리나 패키지 사용
+    - 예: 오래된 jQuery 사용, 취약한 라이브러리 미패치, 종속성 보안 패치 누락
+- A07:2021 - Identification and Authentication Failures
+    - 인증 및 세션 관리 시스템이 안전하지 않음
+    - 예: 세션 고정 (Session Fixation), 약한 비밀번호 정책, 다중 인증 누락
+- A08:2021 - Software and Data Integrity Failures
+    - 코드나 데이터의 무결성 검증 실패
+    - 예: 코드 서명 없이 업데이트, 취약한 CI/CD 파이프라인, 신뢰되지 않은 패키지 사용
+- A09:2021 - Security Logging and Monitoring Failures
+    - 공격 탐지 및 사고 대응이 불가능한 상태
+    - 예: 로그인 실패 로그 누락, 경고/알림 시스템 없음, 의심스러운 활동 미탐지
+- A10:2021 - Server-Side Request Forgery (SSRF)
+    - 서버가 외부 또는 내부 시스템에 악성 요청을 하도록 유도됨
+    - 예: 서버가 외부 URL을 그대로 요청, 내부 IP에 요청 가능 `(http://127.0.0.1:8080)`
+
 <br>
 
 ---
