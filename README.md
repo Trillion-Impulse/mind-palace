@@ -111,6 +111,26 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 ## 보안
 
+### 보안 취약점
+- 컴퓨터 시스템, 네트워크, 애플리케이션, 또는 그 구성요소에서 악의적인 공격자가 악용할 수 있는 결함이나 약점
+
+#### 보안 취약점의 주요 유형
+- 소프트웨어 취약점
+    - 프로그래밍 실수나 설계 결함으로 발생
+    - 예: 버퍼 오버플로우(Buffer Overflow), 포맷 스트링 공격 등
+- 웹 취약점
+    - 웹 애플리케이션에 존재하는 보안상의 허점
+    - 예: SQL Injection, XSS, CSRF
+- 인증 및 권한 관련 취약점
+    - 약한 비밀번호, 인증 우회, 세션 탈취 등이 포함
+    - 예: 관리자 페이지에 인증 없이 접근 가능한 경우
+- 네트워크 취약점
+    - 네트워크 구성 또는 통신 프로토콜 상의 문제
+    - 예: 스니핑(Sniffing), MITM(Man-In-The-Middle) 공격
+- 설정 오류 (Misconfiguration)
+    - 기본 비밀번호 사용, 불필요한 포트 개방, 과도한 권한 설정 등
+    - 예: AWS S3 버킷 퍼블릭 설정
+
 ### OWASP
 - Open Worldwide Application Security Project
 - 웹 애플리케이션 보안을 개선하기 위한 글로벌 비영리 단체
