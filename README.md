@@ -212,3 +212,21 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 ---
 
 <br>
+
+# CI/CD
+
+## CI
+- Continuous Integration
+- 지속적인 통합
+- 개발자들이 작성한 코드를 자주(수시로) 통합하고 자동으로 테스트하는 과정
+
+## CD
+- Continuous Delivery/Deployment
+- 지속적인 배포
+- CI 이후 과정을 통해 코드를 자동으로 배포하는 것
+
+<br>
+
+---
+
+<br>
