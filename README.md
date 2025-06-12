@@ -264,3 +264,18 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 단점
     - 보안에 더 민감해야 함 (토큰 탈취 시 문제 발생)
     - 토큰을 무효화하는 방식은 별도 구현이 필요함
+
+## OAuth 2.0 / OpenID Connect (소셜 로그인 등)
+- 작동방식
+    - Google, Facebook, GitHub 등의 외부 서비스로 인증을 위임
+    - 사용자 로그인 → 서비스에서 인증 → 서버가 사용자 정보를 받아 로그인 처리
+- 주로 사용되는 곳
+    - 사용자 수가 많은 서비스
+    - 소셜 로그인이 필요한 경우
+- 장점
+    - 사용자 등록 부담 없음
+    - 보안 및 인증 처리를 신뢰성 높은 외부 서비스에 맡김
+- 단점
+    - 구현 복잡도 높음 (redirect, callback 등 필요)
+    - API 키/비밀키 관리 필요
+
