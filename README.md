@@ -279,3 +279,16 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     - 구현 복잡도 높음 (redirect, callback 등 필요)
     - API 키/비밀키 관리 필요
 
+## 패스워드리스 로그인 (Passwordless Login)
+- 작동방식
+    - 이메일 링크 로그인, OTP 인증 등
+    - 사용자에게 비밀번호 없이 일회용 링크나 코드를 전송하여 로그인
+- 주로 사용되는 곳
+    - 보안 중심의 서비스
+    - UX 개선이 중요한 서비스
+- 장점
+    - 비밀번호 관리 필요 없음
+    - 피싱 위험 감소
+- 단점
+    - 이메일/SMS 전송 인프라 필요
+    - 구현 난이도 있음
