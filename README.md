@@ -249,3 +249,18 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 단점
     - 서버가 세션 정보를 계속 유지해야 하므로 확장성이 떨어짐 (대규모 서비스에 불리)
 
+## 토큰 기반 인증 (Token-Based Authentication)
+- 작동 방식
+    1. 사용자 로그인 → 서버가 JWT(토큰)을 생성
+    2. 토큰을 브라우저에 저장 (보통 localStorage, sessionStorage, 혹은 HttpOnly 쿠키)
+    3. 이후 모든 요청에 토큰을 Authorization 헤더에 포함
+    4. 서버는 토큰을 검증해 사용자를 식별
+- 주로 사용되는 곳
+    - REST API, 모바일 앱, React/Vue 등의 SPA와 백엔드 분리 구조
+    - Express.js, Flask, FastAPI 등에서 많이 사용됨
+- 장점
+    - 서버 상태를 유지하지 않아도 됨 (stateless)
+    - 마이크로서비스나 프론트-백 분리 환경에 적합
+- 단점
+    - 보안에 더 민감해야 함 (토큰 탈취 시 문제 발생)
+    - 토큰을 무효화하는 방식은 별도 구현이 필요함
