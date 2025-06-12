@@ -230,3 +230,22 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 ---
 
 <br>
+
+# 로그인 기능 구현
+- 로그인 기능은 본질적으로 "사용자 인증(Authentication)"을 구현하는 과정
+- 서버가 사용자의 신원을 확인하고, 인증된 상태를 유지하는 것이 핵심
+
+## 세션 기반 인증 (Session-Based Authentication)
+- 작동 방식
+    1. 사용자가 ID/비밀번호로 로그인
+    2. 서버가 자격 증명을 검증하고 세션 ID를 생성
+    3. 세션 ID를 쿠키에 저장하여 브라우저로 전송
+    4. 이후 요청마다 쿠키를 통해 로그인 상태 유지
+- 주로 사용되는 곳
+    - Flask, Django, Express.js, Rails 등 대부분의 전통적인 서버 프레임워크
+- 장점
+    - 간단하고 직관적
+    - 서버 측에서 로그인 상태를 완전히 관리
+- 단점
+    - 서버가 세션 정보를 계속 유지해야 하므로 확장성이 떨어짐 (대규모 서비스에 불리)
+
