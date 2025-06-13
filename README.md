@@ -292,3 +292,21 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 단점
     - 이메일/SMS 전송 인프라 필요
     - 구현 난이도 있음
+
+## JWT 기반 토큰 인증 vs OAuth 2.0 / OpenID Connect
+
+| 항목 | JWT 기반 인증 | OAuth 2.0 / OpenID Connect |
+|------|------|------|
+| 목적 | 자체 로그인: 사용자가 직접 회원가입하고 로그인함 | 외부 계정 로그인: Google, GitHub, Facebook 등의 계정 사용 |
+| 사용자 관리 | 직접 DB에 사용자 저장 (ID/비밀번호) | 외부 서비스가 사용자 인증, 우리는 결과만 받아옴 |
+| 토큰 종류 | Access Token (보통 JWT) | Access Token + ID Token (OpenID일 때) |
+| 로그인 과정 | 사용자가 우리 서비스에 로그인 → 서버가 JWT 발급 | 사용자가 외부 서비스에 로그인 → 콜백으로 사용자 정보 수신 |
+| 보안 책임 | 우리가 직접 비밀번호를 검증하고 보안 처리 | 외부 서비스(Google 등)가 로그인 처리 |
+| 구현 복잡도 | 비교적 단순 | 상대적으로 복잡 (redirect, callback, 인증 흐름) |
+| 적합한 상황 | API 기반 서비스, SPA(React, Vue 등) | 사용자 등록 허들이 낮아야 할 때, 신뢰성 있는 인증 필요 시 |
+
+<br>
+
+---
+
+<br>
