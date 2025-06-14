@@ -46,6 +46,54 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 브라우저가 HTML을 표시하기 전 누가 HTML을 만드는가에 따른 렌더링 전략
 
 
+## URL
+- Uniform Resource Locator
+- 웹에서 자원의 위치를 나타내는 주소
+- 인터넷에서 웹페이지나 파일 등에 접근하기 위한 인터넷 주소
+
+### URL의 기본 구조
+```
+프로토콜://호스트:포트/경로?쿼리#프래그먼트
+```
+- 프로토콜  (Scheme)
+    - 예: http, https, ftp 등
+    - 웹에서 데이터를 주고받는 방식
+        - https는 보안이 강화된 프로토콜
+- 호스트 (Host)
+    - 예: www.example.com
+    - 서버의 도메인 이름 또는 IP 주소
+    - 어디에 있는 서버인지 알려줌
+- 포트 (Port)
+    - 선택 입력
+    - 예: :80, :443
+    - 서버에서 네트워크 통신을 담당하는 특정 입구 번호
+    - 보통 HTTP는 80, HTTPS는 443번 포트를 기본으로 사용하므로 생략 가능
+- 경로 (Path)
+    - 예: /folder/page.html
+    - 서버 내에서 자원의 위치
+    - 웹사이트 내 폴더와 파일 구조를 의미
+- 쿼리 (Query String)
+    - 선택 입력
+    - 예: ?id=123&sort=asc
+    - 서버에 전달하는 추가 정보
+    - ? 뒤에 키=값 쌍으로 여러 개를 &로 구분합니다.
+- 프래그먼트 (Fragment)
+    - 선택 입력
+    - 예: #section2
+    - 웹페이지 내 특정 위치(앵커)를 가리킴
+    - 서버로 전송되지 않고, 클라이언트에서 처리
+- 예
+    ```
+    https://www.example.com:443/path/to/page.html?search=nodejs#comments
+    ```
+    - 프로토콜: https
+    - 호스트: www.example.com
+    - 포트: 443
+    - 경로: /path/to/page.html
+    - 쿼리: search=nodejs
+    - 프래그먼트: comments
+
+
 ## HTTP 메서드
 
 ### GET
@@ -76,6 +124,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 서버가 지원하는 메서드 목록을 요청
 - 주로 CORS(Cross-Origin Resource Sharing) 사전 요청에서 사용
 - 예: 클라이언트가 POST 요청을 하기 전, 서버에 OPTIONS로 요청해서 Access-Control-Allow-* 헤더 확인
+
 
 ## OAuth
 
@@ -108,6 +157,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 ### OAuth 2.0의 특징
 - 액세스 토큰을 통해 자원 접근 제어
 - 사용자의 비밀번호 노출 없이 권한 위임 가능
+
 
 ## 보안
 
