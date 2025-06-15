@@ -10,6 +10,61 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 # 웹
 
+## 서버 구축 시 기술 스택을 선택하는 기준
+
+### 언어 및 개발자 친숙도
+- 익숙한 언어
+    - Python - Flask
+    - JavaScript - Node.js / Express.js
+    - Java - Spring
+- 언어 특성
+    - Python - 간결하고 배우기 쉬움
+    - JavaScript - 프론트엔드와 동일한 언어 사용 가능
+    - Java - 안정성과 확장성
+
+### 프로젝트 규모와 복잡도
+- 소규모/간단한 
+    - 빠른 개발 가능
+    - Python - Flask
+    - JavaScript - Node.js / Express.js
+- 중대형/복잡한 엔터프라이즈
+    - 견고한 구조, 다양한 기능 지원
+    - Java - Spring
+
+### 성능 및 확장성
+- 고성능, 비동기 처리
+    - JavaScript - Node.js / Express.js
+        - 이벤트 기반 비동기 처리로 I/O가 많은 서비스에 유리
+- CPU 연산 많이 필요한 작업
+    - Java - Spring
+        - 멀티스레딩과 JVM 최적화로 안정적
+- 빠른 개발 속도
+    - Python - Flask
+
+### 에코시스템과 라이브러리 지원
+- 풍부한 라이브러리
+    - JavaScript - Node.js / Express.js
+- 데이터 과학/머신러닝 연동
+    - Python - Flask
+
+### 운영 환경 및 인프라
+- 기존 인프라가 Java 중심
+    - Spring 사용 권장
+- 클라우드, 서버리스 환경
+    - Node.js, Python(Flask) 인기
+- 컨테이너 및 마이크로서비스
+    - Spring Boot, Node.js, Flask 모두 가능하지만 Spring Boot가 안정적
+
+### 커뮤니티와 지원
+- Node.js와 Flask는 스타트업, 빠른 프로토타이핑에 인기
+- Java(Spring)는 대기업, 공공기관, 금융권에서 안정적으로 널리 사용됨
+
+### 개발 및 유지보수 비용
+- 익숙한 스택은 유지보수 비용 감소
+- 대규모 팀과 장기 프로젝트는 구조적이고 명확한 Spring이 유리
+
+
+
 ## 서버사이드렌더링(SSR) vs 클라이언트사이드렌더링(CSR)
 
 ### 서버사이드렌더링(SSR)
