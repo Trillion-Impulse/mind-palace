@@ -415,3 +415,22 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 ---
 
 <br>
+
+# 소프트웨어 시스템 / 응용 프로그램
+- 계층 구조
+    ```
+    [시스템 수준]
+    ├── 소프트웨어 시스템 / 응용 프로그램
+        └── 소프트웨어 아키텍처 (또는 소프트웨어 구조)
+            └── 아키텍처 스타일 / 아키텍처 패턴 (MVC, Layered, Microservices 등)
+                └── 컴포넌트 (Component)
+                    └── 모듈 (Module)
+                        └── 클래스 (Class)
+                            └── 함수/메서드 (Function/Method)
+    ```
+
+<br>
+
+---
+
+<br>
