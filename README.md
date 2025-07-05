@@ -428,6 +428,12 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
                         └── 클래스 (Class)
                             └── 함수/메서드 (Function/Method)
     ```
+    - 소프트웨어 아키텍처: 시스템의 상위 구조. 구성요소, 관계, 상호작용을 정의
+    - 아키텍처 스타일 / 아키텍처 패턴: 아키텍처를 설계할 때 따르는 설계 방식의 유형
+        - 예: MVC, Layered, Microservices
+    - 컴포넌트: 특정 기능을 독립적으로 담당하는 재사용 가능한 단위
+    - 모듈: 보통 파일 단위로 나뉜 코드 묶음, 컴포넌트 안에 있을 수 있음
+    - 클래스 / 함수: 모듈 안에서 실제 동작을 정의하는 코드
 
 <br>
 
