@@ -559,3 +559,161 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 | **D2C**   | *Direct to Consumer*<br>(제조사 → 소비자 직접 판매)    | 브랜드가 유통사 없이 소비자에게 직판     | 애플 공식스토어, 무신사 스토어 자체 브랜드, 아임웹 브랜드몰, 패션 D2C 브랜드 |
 | **B2B2C** | *Business to Business to Consumer*<br>(기업 → 기업 → 소비자) | 기업이 다른 기업을 통해 소비자에게 서비스 제공 | 네이버 스마트스토어(입점사→네이버→소비자), 배달 플랫폼 구조 |
 | **O2O**   | *Online to Offline*<br>(온라인 → 오프라인 연결)                | 온라인 플랫폼이 오프라인 서비스 소비로 연결   | 카카오T, 배달앱(쿠팡이츠, 배달의민족), 미용실/병원 예약앱 |
+
+<br>
+
+---
+
+<br>
+
+# 보안
+
+## 보안 관제 (SOC)
+- Security Operations Center
+
+### Wazuh
+- 오픈소스 SIEM + EDR
+- 서버, PC, 가상머신, 클라우드 등에서 발생하는 보안 로그를 수집
+- 수집한 로그를 분석해서 아래의 항목 등을 탐지해 주는 플랫폼
+    - 해킹 시도
+    - 악성코드 의심 행위
+    - 비정상 로그인
+    - 권한 상승 시도
+
+### SIEM
+- Security Information and Event Management
+- SOC 업무의 핵심 시스템
+- 여러 장비에서 발생하는 로그를 한 곳으로 모아 분석하는 시스템
+- 예를 들어, 회사에 Windows PC 100대, Linux 서버 20대, 방화벽, 웹서버가 있다고 가정
+    - 로그가 여기저기 흩어져 있으면 분석이 어려움
+    - 그래서 SIEM이 아래를 수행
+        ```
+        Windows 로그
+        Linux 로그
+        방화벽 로그
+        웹서버 로그
+          ↓
+        SIEM
+
+          ↓
+        통합 분석
+        ```
+    - SOC 분석가는 대부분 하루 종일 SIEM 화면을 봄
+
+### EDR
+- Endpoint Detection and Response
+- 개별 PC나 서버를 감시하는 보안 솔루션
+- 예를 들어 아래와 같은 행위를 감시
+    ```
+    powershell 실행
+      ↓
+    의심스러운 프로세스 생성
+      ↓
+    외부 IP 통신
+    ```
+- 대표적인 상용 제품
+    - CrowdStrike Falcon
+    - Microsoft Defender for Endpoint
+    - Wazuh는 일부 EDR 기능도 제공
+
+### Wazuh 구조
+- 대략 아래와 같음
+    ```
+    PC
+    서버
+    가상머신
+      ↓
+    Wazuh Agent
+      ↓
+    Wazuh Server
+      ↓
+    Elasticsearch
+      ↓
+    Dashboard
+    ```
+    - Agent
+        - 감시 프로그램
+        - 예를 들어 Windows PC에 설치하여 아래의 항목을 수집
+            - 로그인 성공
+            - 로그인 실패
+            - 프로세스 실행
+            - 파일 변경
+    - Server
+        - Agent들이 보내는 데이터를 받음
+            ```
+            로그 수신
+            ↓
+            규칙 적용
+            ↓
+            위협 판단
+            ```
+    - Dashboard
+        - 분석 결과를 보여 줌
+        - 예를 들어 아래와 같은 것
+            ```
+            오늘 발생한 경고
+            TOP 공격 IP
+            로그인 실패 횟수
+            악성 파일 탐지
+            ```
+
+### 실제로 어떤 것을 탐지할 수 있나?
+- 예를 들어
+    - Linux 서버에서 `sudo su`를 반복 실행하면 권한 상승 시도로 탐지될 수 있음
+    - SSH 로그인 실패를 반복하면 Wazuh가 Brute Force 의심 알림을 발생시킬 수 있음
+    - Windows에서 `powershell.exe`가 실행되면 보안 룰에 따라 경고를 발생시킬 수 있음
+
+### Wazuh가 왜 SOC에서 중요한가?
+- 보통 SOC 업무 화면이 아래와 같은 느낌
+    ```
+    [ALERT]
+
+    Level 10
+
+    SSH Authentication Failure
+
+    Source IP:
+    1.2.3.4
+
+    Count:
+    50
+    ```
+- 분석가는 `공격인가? 오탐인가? 차단해야하나?`를 판단
+- Wazuh를 구축하면 이런 환경을 작은 규모로 경험할 수 있음
+
+### Wazuh 프로젝트에서 배울 수 있는 것
+- 아래와 같은 것들을 체험 가능
+- Linux
+    ```
+    systemctl
+    journalctl
+    grep
+    ```
+- Docker
+    - `docker compose up`
+- 로그 분석
+    ```
+    auth.log
+    syslog
+    event log
+    ```
+- 탐지 규칙
+    ```
+    로그인 실패 10회
+      ↓
+    경고 발생
+    ```
+- SOC 업무 흐름
+    ```
+    로그 수집
+      ↓
+    이벤트 발생
+      ↓
+    경고 생성
+      ↓
+    분석
+      ↓
+    조치
+    ```
+- Wazuh를 구축하고 Linux 서버의 SSH Brute Force 이벤트를 탐지해 분석 경험으로
+    - 실제 SOC의 업무 축소 체험 가능
