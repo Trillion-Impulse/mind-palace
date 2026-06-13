@@ -568,10 +568,12 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 # 정보 보안
 
-## 보안 관제 (SOC)
+## 보안 운영
+
+### 보안 관제 (SOC)
 - Security Operations Center
 
-### Wazuh
+#### Wazuh
 - 오픈소스 SIEM + EDR
 - 서버, PC, 가상머신, 클라우드 등에서 발생하는 보안 로그를 수집
 - 수집한 로그를 분석해서 아래의 항목 등을 탐지해 주는 플랫폼
@@ -580,7 +582,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     - 비정상 로그인
     - 권한 상승 시도
 
-### SIEM
+#### SIEM
 - Security Information and Event Management
 - SOC 업무의 핵심 시스템
 - 여러 장비에서 발생하는 로그를 한 곳으로 모아 분석하는 시스템
@@ -600,7 +602,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
         ```
     - SOC 분석가는 대부분 하루 종일 SIEM 화면을 봄
 
-### EDR
+#### EDR
 - Endpoint Detection and Response
 - 개별 PC나 서버를 감시하는 보안 솔루션
 - 예를 들어 아래와 같은 행위를 감시
@@ -616,7 +618,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     - Microsoft Defender for Endpoint
     - Wazuh는 일부 EDR 기능도 제공
 
-### Wazuh 구조
+#### Wazuh 구조
 - 대략 아래와 같음
     ```
     PC
@@ -657,13 +659,13 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
             악성 파일 탐지
             ```
 
-### 실제로 어떤 것을 탐지할 수 있나?
+#### 실제로 어떤 것을 탐지할 수 있나?
 - 예를 들어
     - Linux 서버에서 `sudo su`를 반복 실행하면 권한 상승 시도로 탐지될 수 있음
     - SSH 로그인 실패를 반복하면 Wazuh가 Brute Force 의심 알림을 발생시킬 수 있음
     - Windows에서 `powershell.exe`가 실행되면 보안 룰에 따라 경고를 발생시킬 수 있음
 
-### Wazuh가 왜 SOC에서 중요한가?
+#### Wazuh가 왜 SOC에서 중요한가?
 - 보통 SOC 업무 화면이 아래와 같은 느낌
     ```
     [ALERT]
@@ -681,7 +683,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 분석가는 `공격인가? 오탐인가? 차단해야하나?`를 판단
 - Wazuh를 구축하면 이런 환경을 작은 규모로 경험할 수 있음
 
-### Wazuh 프로젝트에서 배울 수 있는 것
+#### Wazuh 프로젝트에서 배울 수 있는 것
 - 아래와 같은 것들을 체험 가능
 - Linux
     ```
