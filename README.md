@@ -566,7 +566,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 <br>
 
-# 보안
+# 정보 보안
 
 ## 보안 관제 (SOC)
 - Security Operations Center
