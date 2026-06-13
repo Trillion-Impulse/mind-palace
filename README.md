@@ -719,3 +719,12 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     ```
 - Wazuh를 구축하고 Linux 서버의 SSH Brute Force 이벤트를 탐지해 분석 경험으로
     - 실제 SOC의 업무 축소 체험 가능
+
+## 위협 (Threats)
+
+### 사이버 공격
+
+- 인증 공격
+    - 패스워드 공격
+        - Brute Force
+            - 가능한 모든 비밀번호 조합을 하나씩 시도하여 인증을 우회하는 공격
