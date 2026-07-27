@@ -568,6 +568,39 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     | 사용 포트   | 80   | 443   |
     - 포트(Port): 하나의 컴퓨터 안에서 어떤 프로그램과 통신할지 구분하는 번호
 
+## DNS
+- Domain Name System
+- 도메인 이름을 IP 주소로 변환해 주는 시스템
+    - 도메인(Domain): 사람이 기억하기 쉽게 만든 인터넷 주소
+- 응용 계층 프로토콜
+- 기본적으로 UDP를 사용
+    - 경우에 따라 TCP 사용 가능
+
+### DNS Server
+- 도메인 이름과 IP 주소 정보를 관리하고, 도메인을 IP 주소로 변환해 주는 서버
+- 웹사이트 접속 흐름
+    ```
+    사용자가 브라우저에 google.com 입력
+        ↓
+    DNS Server에 google.com의 IP 주소 요청
+        ↓
+    DNS Server가 IP 주소 응답
+        ↓
+    TCP 연결
+        ↓
+    HTTP(또는 HTTPS) 요청
+        ↓
+    IP를 이용하여 웹 서버까지 전달
+        ↓
+    웹 서버가 HTML 응답
+        ↓
+    브라우저가 화면 출력
+    ```
+
+### DNS의 역할
+- IP 주소를 찾아주는 역할
+    - 실제 데이터 전송은 IP와 TCP/UDP가 담당
+
 <br>
 
 ---
