@@ -411,6 +411,45 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     | 데이터 링크(Data Link) | 네트워크 접근(Network Access) | Ethernet, Wi-Fi  |
     | 물리(Physical)      | 네트워크 접근(Network Access) | 랜선, 광케이블, 전파     |
 
+
+## IP
+- Internet Protocol
+    - 프로토콜(Protocol): 컴퓨터끼리 데이터를 주고받을 때 지켜야 하는 약속이나 규칙
+- 인터넷에서 IP 주소(IP Address)를 이용해서 데이터를 목적지까지 전달하기위한 프로토콜
+- 데이터는 패킷(Packet) 단위로 전송
+
+### IP 주소란?
+- 네트워크에 연결된 장치를 구분하기 위한 주소
+- 쉽게 말해 집 주소
+
+### IP의 역할
+- 주소 지정(Addressing)
+    - 데이터를 보낼 목적지의 위치를 식별하는 것
+- 데이터 전달(Routing)
+    - IP 주소를 기반으로 데이터를 목적지까지 전달하는 과정
+
+### 패킷(Packet)이란?
+- 인터넷에서는 큰 데이터를 한 번에 보내지 않음
+- 데이터를 작은 조각으로 나누어 전송
+- 이 작은 데이터 조각을 패킷(Packet)이라고 함
+- 패킷 = 헤더(Header) + 데이터(Payload)
+    - 헤더(Header): 패킷의 앞부분에 붙는 정보
+        - ex: 출발지IP, 목적지IP, 기타 정보
+    - 데이터(Payload): 실제로 보내려는 데이터
+        - ex: 사진, 문자, 동영상 일부 등
+
+### IP의 특징
+- 비연결성(Connectionless)
+    - 통신 전에 상대방과 연결을 설정 및 확인하지 않고 데이터를 전송하는 방식
+- 신뢰성을 보장하지 않음
+    - 데이터가 도착했는지, 중간에 사라졌는지, 순서가 바뀌었는지, 중복되었는지 확인하지 않음
+
+### IP의 한계와 해결
+- 데이터가 사라질 수 있음
+- 데이터 순서가 바뀔 수 있음
+- 중복 전송될 수 있음
+- 이러한 문제를 TCP가 해결
+
 <br>
 
 ---
