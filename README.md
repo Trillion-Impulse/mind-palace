@@ -522,6 +522,52 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
         - 실제 데이터를 보내는 것 외에 통신을 위해 추가로 필요한 작업이나 데이터
         - TCP의 연결 설정, ACK 확인, 순서 관리, 재전송 등이 해당
 
+## HTTP와 웹 서버
+
+### HTTP
+- HyperText Transfer Protocol
+    - HyperText: 다른 문서나 페이지로 연결되는 링크를 포함한 문서
+- 웹 브라우저와 웹 서버가 웹페이지 데이터를 주고받기 위한 응용 계층 프로토콜
+
+### 웹 서버
+- Web Server
+- 웹 브라우저의 요청을 받아 HTML, CSS, JavaScript, 이미지 등을 보내주는 서버
+
+### HTTP는 왜 필요한가?
+- 브라우저와 서버가 같은 규칙으로 대화하기 위함
+
+### HTTP의 동작 방식
+- 브라우저(Client)가 서버에게 요청(Request)
+    - 클라이언트(Client): 서비스를 요청하는 프로그램이나 장치
+- 서버(Server)가 응답(Response)
+    - 서버(Server): 클라이언트의 요청을 받아 응답하는 프로그램이나 컴퓨터
+
+### HTTP의 특징
+- 요청-응답(Request-Response) 방식
+    - 클라이언트가 Request → 서버가 Response → 클라이언트
+- Stateless
+    - 이전 요청을 기억하지 않는다
+    - 상태를 저장하지 않는다
+- TCP 위에서 동작
+    - HTML이나 이미지가 중간에 손실되면 웹페이지가 깨질 수 있기 때문
+
+### HTTPS
+- HyperText Transfer Protocol Secure
+- HTTP에 보안(Security)을 추가한 프로토콜
+- HTTPS는 데이터를 보내기 전에 암호화(Encryption) 함
+    - 암호화(Encryption): 데이터를 다른 사람이 읽을 수 없도록 알아볼 수 없는 형태로 바꾸는 것
+    - 로그인 정보나 결제 정보처럼 민감한 데이터를 안전하게 보호
+
+### HTTP와 HTTPS 비교
+- 표
+    | 항목      | HTTP | HTTPS |
+    | ------- | ---- | ----- |
+    | 보안      | 없음   | 있음    |
+    | 암호화     | X    | O     |
+    | 비밀번호 보호 | X    | O     |
+    | 사용 포트   | 80   | 443   |
+    - 포트(Port): 하나의 컴퓨터 안에서 어떤 프로그램과 통신할지 구분하는 번호
+
 <br>
 
 ---
