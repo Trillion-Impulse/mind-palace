@@ -361,6 +361,56 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 컴퓨터끼리 데이터를 주고받을 때 지켜야 하는 약속이나 규칙
 - 통신 규칙
 
+## OSI 7계층
+- 계층(Layer)
+    - 하나의 큰 일을 여러 단계로 나누어, 각 단계가 자신의 역할만 담당하도록 만든 구조
+    - 분업
+- OSI
+    - Open Systems Interconnection
+        - Open: 개방형
+        - Systems: 시스템
+        - Interconnection: 상호 연결
+    - 컴퓨터들이 어떤 순서로 데이터를 주고받아야 하는지를 설명하기 위해 만든 표준 모델
+- OSI 7계층
+    - 통신을 위한 표준 모델의 통신 과정을 7단계로 나눈 것
+    - 표
+        | 계층      | 이름                | 하는 일                     | 대표 예시                |
+        | ------- | ----------------- | ------------------------ | -------------------- |
+        | 7계층 | 응용(Application)   | 사용자가 직접 사용하는 네트워크 서비스 제공 | HTTP, FTP, SMTP, DNS |
+        | 6계층 | 표현(Presentation)  | 데이터 형식 변환, 암호화, 압축       | JPEG, MP3, SSL/TLS   |
+        | 5계층 | 세션(Session)       | 통신 연결을 생성·유지·종료          | 로그인 세션 관리            |
+        | 4계층 | 전송(Transport)     | 데이터를 안전하고 정확하게 전달        | TCP, UDP             |
+        | 3계층 | 네트워크(Network)     | 목적지까지 경로를 찾아 데이터 전달      | IP, 라우터              |
+        | 2계층 | 데이터 링크(Data Link) | 같은 네트워크 내에서 데이터 전달       | MAC 주소, 스위치          |
+        | 1계층 | 물리(Physical)      | 전기 신호나 광신호로 데이터를 전송      | 랜선, 광케이블, 허브         |
+    - 송신: 7~1단계 순서, 각 계층이 필요한 정보를 추가(캡슐화)
+    - 수신: 1~7단계 순서, 각 계층이 자신이 붙인 정보를 제거하며 처리
+    - IP vs MAC
+        - IP 주소는 거의 변하지 않고 최종 목적지를 나타냄
+        - MAC 주소는 네트워크 구간(링크)이 바뀔 때마다 새로 바뀜
+
+## TCP/IP 4계층
+- 실제 인터넷에서 사용하는 통신 구조
+- 표
+    | 계층      | 이름                | 하는 일                     | 대표 예시                |
+    | ------- | ----------------- | ------------------------ | -------------------- |
+    | 4계층 | 응용 계층 (Application Layer) | 사용자가 사용하는 프로그램이나 서비스 | HTTP, FTP, SMTP, DNS |
+    | 3계층 | 전송 계층 (Transport Layer) | 목적지까지 경로를 찾아 데이터 전달 | TCP, UDP, 포트 번호 |
+    | 2계층 | 인터넷 계층 (Internet Layer) | 목적지까지 길을 찾는 것 | IP, ICMP, 라우팅 |
+    | 1계층 | 네트워크 접근 계층 (Network Access Layer) | 전기 신호나 무선신호 등으로 데이터를 전송 | 랜선, 광케이블, MAC 주소, Wi-Fi 등 |
+
+## OSI 7계층과 TCP/IP 4계층 비교
+- 표
+    | OSI 7계층           | TCP/IP 4계층              | 실제 예시            |
+    | ----------------- | ----------------------- | ---------------- |
+    | 응용(Application)   | 응용(Application)         | HTTP, HTTPS, DNS |
+    | 표현(Presentation)  | 응용(Application)에 포함     | 데이터 형식 변환        |
+    | 세션(Session)       | 응용(Application)에 포함     | 연결 관리            |
+    | 전송(Transport)     | 전송(Transport)           | TCP, UDP         |
+    | 네트워크(Network)     | 인터넷(Internet)           | IP               |
+    | 데이터 링크(Data Link) | 네트워크 접근(Network Access) | Ethernet, Wi-Fi  |
+    | 물리(Physical)      | 네트워크 접근(Network Access) | 랜선, 광케이블, 전파     |
+
 <br>
 
 ---
