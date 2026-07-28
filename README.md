@@ -974,6 +974,37 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 <br>
 
+# 보안 관제
+
+## SIEM
+- Security Information and Event Management
+    - Security = 보안
+    - Information = 정보
+    - Event = 이벤트
+    - Management = 관리
+- 여러 보안 장비에서 발생하는 로그와 이벤트를 한곳에 모아 분석하고 관리하는 시스템
+
+### SIEM의 역할
+- 로그 수집(Collection): 각 장비에서 로그를 가져옴
+- 로그 저장(Storage): 수집한 로그를 저장, 나중에 사고가 발생하면 과거 로그도 분석 
+- 로그 분석(Analysis): 로그를 서로 연결(Correlation)해서 분석
+    - 상관분석(Correlation): 관련 있는 사건을 연결해서 분석하는 것
+- 경고(Alert)
+
+### SIEM과 EDR 비교
+- 표
+    | EDR              | SIEM                 |
+    | ---------------- | -------------------- |
+    | PC·서버 보호         | 로그를 통합 관리            |
+    | 엔드포인트에서 위협 탐지·대응 | 여러 장비의 로그를 수집·분석     |
+    | 프로세스 종료, 격리 가능   | 직접 차단하지 않고 분석과 경고 제공 |
+
+<br>
+
+---
+
+<br>
+
 # SQL
 
 ## DDL
