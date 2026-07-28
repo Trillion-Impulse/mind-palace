@@ -471,6 +471,12 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
         - TCP는 데이터를 보내기 전에 3-way Handshake라는 과정을 통해 연결을 맺음
 - 신뢰성 보장(Reliability)
     - 데이터가 모두 도착했는지, 순서가 맞는지, 손실된 데이터의 재전송 요청
+        - ACK를 이용해 데이터 수신 여부 확인
+        - 손실된 데이터 재전송
+        - 시퀀스 번호를 이용해 데이터의 순서를 보장
+            - 시퀀스 번호(Sequence Number)
+                - TCP가 각 데이터에 붙이는 번호
+                - 이를 이용해 데이터의 순서를 확인하고, 빠진 데이터도 찾아낼 수 있음
 - 오류 확인
     - 데이터에 문제가 있으면 재전송 요청
 
