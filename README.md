@@ -450,6 +450,13 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 중복 전송될 수 있음
 - 이러한 문제를 TCP가 해결
 
+## IP와 TCP
+- IP는 목적지 IP 주소를 보고 패킷을 라우터를 거쳐 목적지 호스트까지 전달
+    - 라우터(Router): 여러 네트워크를 연결하며, 목적지 IP 주소를 보고 패킷의 다음 경로를 결정하는 장비
+- TCP는 목적지 포트 번호를 보고 해당 호스트 내의 올바른 애플리케이션으로 데이터를 전달
+    - 동시에 연결 상태, 순서, 재전송 등을 관리
+    - 신뢰성 있는 통신을 제공
+
 ## TCP와 UDP
 - 데이터를 목적지까지 어떤 방식으로 전달할지를 담당하는 전송 계층(Transport Layer)의 대표적인 프로토콜
 
