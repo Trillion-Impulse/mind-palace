@@ -802,7 +802,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     - 단점: 새로운 공격은 탐지하기 어려움
 - 이상 행위 기반 탐지(Anomaly-Based Detection)
     - 이상 행위(Anomaly): 평소와 다른 비정상적인 행동
-    - 장점: 새로운 공격도 발견할 가능성이 있습니다.
+    - 장점: 새로운 공격을 발견 가능
     - 단점: 정상적인 행동도 공격으로 오탐(False Positive) 가능
         - 오탐(False Positive): 정상인데 공격이라고 잘못 판단하는 것
         - 미탐(False Negative): 실제 공격인데 정상이라고 판단하는 것
