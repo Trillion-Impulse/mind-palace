@@ -759,6 +759,35 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 허용된 통신이라면 모두 정상으로 판단
 - IDS, IPS, WAF 같은 장비들이 허용된 통신 안에 숨은 공격 내용까지 분석
 
+## NAT
+- Network Address Translation
+- IP 주소를 다른 IP 주소로 변환하는 기술
+
+### 공인 IP와 사설 IP
+- 공인 IP(Public IP): 인터넷에서 사용할 수 있는 고유한 IP 주소
+- 사설 IP(Private IP): 내부 네트워크에서만 사용하는 IP 주소
+- IPv4 주소는 약 43억 개로 한정
+        - 집이나 회사에 여러대의 PC 존재하더라도 주소 개수가 한정되어 있으므로 공인 IP를 각각 부여할 수 없음
+        - 내부에서는 사설 IP를 사용
+        - 내부 네트워크의 여러 장비가 하나 또는 소수의 공인 IP를 공유하여 인터넷과 통신
+
+### NAT의 장점
+- 공인 IP 절약
+- 내부 IP를 외부에 숨길 수 있음
+
+### NAT와 방화벽 비교
+- 표
+    | 방화벽       | NAT          |
+    | --------- | ------------ |
+    | 허용/차단을 결정 | IP 주소를 변환    |
+    | 보안 정책 적용  | 주소 변환 수행     |
+    | 공격 차단 가능  | 공격 차단 기능은 아님 |
+
+## PAT
+- Port Address Translation
+- 하나의 공인 IP를 여러 장치가 사용할 수 있도록 포트 번호까지 함께 변환하는 방식
+- 공인 IP는 하나지만 포트 번호가 다르기 때문에 누가 요청했는지 구분할 수 있음
+
 <br>
 
 ---
