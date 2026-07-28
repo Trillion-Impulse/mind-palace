@@ -567,6 +567,69 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     | 3389   | RDP  | 윈도우 원격 접속 |
 
 
+## 주요 프로토콜
+
+### HTTP
+- HyperText Transfer Protocol
+- 웹 브라우저와 웹 서버가 데이터를 주고받는 프로토콜
+- 포트 번호: 80
+
+### HTTPS
+- HyperText Transfer Protocol Secure
+- HTTP에 암호화를 추가한 프로토콜
+- 포트 번호: 443
+
+### DNS
+- Domain Name System
+- 도메인을 IP 주소로 변환해 주는 프로토콜
+- 포트 번호: 53
+- 기본적으로 UDP 사용
+    - 큰 데이터를 전송하거나 영역 전송(Zone Transfer)처럼 특별한 경우에는 TCP를 사용할 수 있음
+
+### FTP
+- File Transfer Protocol
+- 파일을 전송하는 프로토콜
+- 포트 번호: 20, 21
+- 암호화를 하지 않음
+    - 비밀번호가 평문으로 전송됨
+        - 평문(Plain Text): 암호화되지 않은 원래 데이터
+
+### SSH
+- Secure Shell
+- 원격으로 서버를 관리하는 프로토콜
+- 포트 번호: 22
+
+### Telnet
+- 원격 접속 프로토콜
+- 포트 번호: 23
+- 암호화되지 않음
+    - 대부분 SSH 사용
+- Telnet보다 SSH가 안전한 이유
+    - SSH는 데이터를 암호화하지만 Telnet은 암호화하지 않아 아이디와 비밀번호가 노출될 수 있기 때문
+
+### SMTP
+- Simple Mail Transfer Protocol
+- 메일을 보내는 프로토콜
+- 포트 번호: 25
+
+### POP3 / IMAP
+- 메일을 받는 프로토콜
+- POP3: 메일을 내려 받음
+    - 포트 번호: 110
+- IMAP: 메일을 서버와 동기화
+    - 포트 번호: 143
+
+### DHCP
+- Dynamic Host Configuration Protocol
+- 컴퓨터에 IP 주소를 자동으로 할당해 주는 프로토콜
+- 포트 번호: 67, 68
+
+### ICMP
+- Internet Control Message Protocol
+- 네트워크 상태를 확인하는 프로토콜
+- ex: `ping`명령어
+- ICMP는 포트를 사용하지 않음
+
 ## HTTP와 웹 서버
 
 ### HTTP
