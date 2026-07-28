@@ -878,6 +878,31 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - 네트워크의 끝에서 실제로 사용하는 
 - 사용자가 직접 사용하는 기기
 
+## Antivirus(백신)
+- 컴퓨터에 있는 악성코드를 탐지하고 제거하는 보안 프로그램
+
+### 백신은 언제 검사할까?
+- 실시간 검사(Real-Time Scan)
+    - 파일이 실행되는 순간 검사
+- 수동 검사(On-Demand Scan)
+    - 사용자가 직접 검사하는 방식
+
+### 백신의 탐지 방법
+- 시그니처(Signature) 기반 탐지
+    - 장점 - 빠르게 검사 가능, 정확도가 높음, 오탐이 비교적 적음
+    - 단점 - 알려지지 않은 악성코드(신종 악성코드)에 약함
+
+### 백신의 대응
+- 삭제(Delete): 파일을 삭제
+- 격리(Quarantine): 실행되지 못하도록 안전한 공간으로 이동
+- 치료(Disinfection): 가능한 경우 악성 부분만 제거하고 원래 파일을 복구
+
+## 악성코드(Malware)
+- Malicious + Software
+    - Malicious : 악의적인
+    - Software : 프로그램
+- 사용자나 시스템에 피해를 주기 위해 만들어진 프로그램
+
 ## EDR
 - Endpoint Detection and Response
     - Endpoint = PC, 서버 같은 장치
