@@ -865,6 +865,36 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     | IP, 포트, 프로토콜 등 연결 정보를 기준으로 정책을 적용 | 패킷의 내용을 분석하여 공격 여부를 판단   |
     | 허용되지 않은 연결을 차단                        | 허용된 연결 안에 숨어 있는 공격도 탐지·차단 가능 |
 
+# 웹 보안
+
+## WAF
+- Web Application Firewall
+    - 웹 애플리케이션: 웹 브라우저에서 사용하는 애플리케이션
+- 웹 서비스를 보호하기 위한 방화벽
+
+### WAF의 역할
+- HTTP와 HTTPS 요청을 분석하여 웹 공격을 탐지하고 차단하는 보안 장비
+- 웹 요청(Request)을 분석
+
+### WAF가 막는 대표 공격
+- SQL Injection
+    - 데이터베이스(DB)를 속여 원하지 않는 SQL 명령을 실행하게 만드는 공격
+- XSS
+    - Cross Site Scripting
+    - 웹페이지에 악성 JavaScript를 삽입하는 공격
+- Directory Traversal
+    - 상위 폴더 접근 공격
+- File Upload 공격
+    - 악성 파일 업로드
+
+### Firewall vs IPS vs WAF
+- 표
+    | 구분    | Firewall     | IPS         | WAF                       |
+    | ----- | ------------ | ----------- | ------------------------- |
+    | 보호 대상 | 네트워크         | 네트워크        | 웹 서비스                     |
+    | 분석 기준 | IP, 포트, 프로토콜 | 패킷 내용       | HTTP/HTTPS 요청             |
+    | 대표 차단 | 허용되지 않은 연결   | 다양한 네트워크 공격 | SQL Injection, XSS 등 웹 공격 |
+
 <br>
 
 ---
