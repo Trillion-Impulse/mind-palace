@@ -718,7 +718,7 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 # 네트워크 보안
 
 ## 방화벽
-- 허용된 네트워크 통신만 통과시키고, 허용되지 않은 통신은 차단하는 보안 장비 또는 소프트웨어
+- 미리 정의된 보안 정책에 따라 네트워크 트래픽을 허용하거나 차단하는 보안 장비 또는 소프트웨어
 
 ### 방화벽은 무엇을 보고 판단하는가?
 - 출발지 IP(Source IP)
