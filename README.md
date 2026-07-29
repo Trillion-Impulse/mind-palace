@@ -1023,6 +1023,20 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 - MFA 사용
     - MFA: Multi-Factor Authentication, 비밀번호 외에 추가 인증을 요구하는 방식
 
+## Phishing
+- 사용자를 속여 개인정보나 계정 정보, 금융 정보 등을 탈취하거나 악성코드를 설치하도록 유도하는 사회공학적 공격
+    - 사회공학(Social Engineering): 시스템의 기술적인 취약점을 공격하는 것이 아니라, 사람의 심리와 행동을 이용하는 공격 방식
+- 사람을 속여 원하는 행동을 하게 만드는 공격
+
+### 피싱메일의 특징
+- 긴급성을 강조
+- 호기심 유발
+- 발신자를 속임
+- 링크 클릭 유도
+
+### Spear Phishing(스피어 피싱)
+- 창처럼 특정 사람을 정확하게 노리는 공격
+
 <br>
 
 ---
