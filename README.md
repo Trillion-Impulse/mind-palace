@@ -1005,6 +1005,30 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 <br>
 
+# 대표적인 사이버 공격
+
+## Brute Force
+- 무차별 대입 공격
+- 비밀번호를 맞출 때까지 가능한 모든 값을 계속 시도하는 공격
+
+### Brute Force의 특징
+- 많은 로그인 시도
+- 로그인 실패가 매우 많음
+- 성공할 수도 있음
+
+### Brute Force 대응
+- 계정 잠금(Account Lockout)
+- 비밀번호 변경
+- IP 차단
+- MFA 사용
+    - MFA: Multi-Factor Authentication, 비밀번호 외에 추가 인증을 요구하는 방식
+
+<br>
+
+---
+
+<br>
+
 # SQL
 
 ## DDL
