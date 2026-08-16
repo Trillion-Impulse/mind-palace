@@ -871,6 +871,33 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 <br>
 
+# 네트워크 기반 공격
+
+1. 소극적(수동적) 공격
+1. 적극적 공격
+    - 재생 공격
+    - 위변조
+    - 위장
+        - 신분을 위장한 공격자가 다른 권한을 가진 개체로 행세하는 공격
+        - 대표적으로 스푸핑
+            - IP Spoofing
+                - Source IP를 위조하는 기법
+    - 서비스 거부
+        - DoS(Denial of Service)
+        - 시스템을 악의적으로 공격해서 해당 시스템의 자원을 부족하게 하여 원래 의도된 용도로 사용하지 못하게 하는 공격
+
+## Dos
+- 스머프 공격(Smurf Attak)
+    - 출발지 주소를 공격 대상의 IP로 설정하여 네트워크 전체에게 ICMP Echo 패킷을 직접 브로드캐스팅하여 목표 시스템을 마비시키는 공격
+    - 네트워크 수준에서 어떤 호스트의 서비스를 방해하는 서비스 거부 공격 방법
+    - 피해자의 IP로 Source IP를 위장(IP Spoofing)한 ICMP Echo Request를 브로드캐스트하여, 다수의 호스트가 피해자에게 ICMP Echo Reply를 보내도록 만드는 공격
+
+<br>
+
+---
+
+<br>
+
 # 엔드포인트 보안
 
 ## 엔드포인트
