@@ -957,6 +957,60 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
         | `or`       | 둘 중 하나 만족     | `port 80 or port 443` |
         | `not`      | 조건 제외         | `not port 22`         |
 
+## ss
+- 리눅스에서 네트워크 소켓(socket)의 상태를 확인하는 명령어
+    - 소켓(socket): 프로그램이 네트워크를 통해 데이터를 주고받을 수 있도록 운영체제가 제공하는 통신의 끝점(endpoint)
+- 기본 구조
+    - `ss [옵션] [필터]`
+        - ss는 기본값만으로는 원하는 정보를 찾기 어려울 수 있기 때문에 보통 옵션을 함께 사용
+    - 옵션
+        | 옵션   | 의미          | 예시       |
+        | ---- | ----------- | -------- |
+        | `-t` | TCP         | `ss -t` (TCP 소켓만 표시)  |
+        | `-u` | UDP         | `ss -u` (UDP 소켓만 표시) |
+        | `-l` | LISTEN      | `ss -l` (LISTEN 상태인 소켓만 표시) |
+        | `-a` | 모든 소켓       | `ss -a` <br>(표시되지 않는 소켓까지 포함해서 모든 소켓을 표시)  |
+        | `-n` | 숫자로 표시      | `ss -n` <br>(주소나 포트 번호를 이름으로 변환하지 않고 숫자 그대로 표시) |
+        | `-p` | 프로세스 표시     | `ss -p` <br>(해당 소켓을 사용하고 있는 프로세스(process)를 표시) |
+        | `-s` | 소켓 통계       | `ss -s` <br>(소켓의 전체적인 통계를 보여줌) |
+        | `-r` | 주소/라우팅 정보   | `ss -r` <br>(주소를 이름으로 변환하고 라우팅 관련 정보를 표시) |
+        | `-o` | 타이머 정보      | `ss -to` <br>(TCP 소켓의 타이머 정보를 표시) |
+        | `-i` | TCP 내부 정보   | `ss -ti` <br>(TCP 연결에 대한 좀 더 자세한 내부 정보) |
+        | `-m` | 소켓 메모리 정보   | `ss -tm` |
+        | `-4` | IPv4        | `ss -4`  |
+        | `-6` | IPv6        | `ss -6`  |
+        | `-x` | Unix socket | `ss -x` <br>(Unix domain socket은 네트워크를 거치지 않고 같은 컴퓨터 안의 프로세스끼리 통신하기 위한 소켓)  |
+        | `-w` | RAW socket  | `ss -w` <br>(RAW socket은 일반적인 TCP/UDP 소켓보다 낮은 네트워크 계층에서 패킷을 직접 다룰 수 있는 특수한 소켓)  |
+- TCP 연결 확인
+    - ss는 현재 맺어져 있는 TCP 연결도 확인 가능
+    - `ss -t`
+        ```
+        State   Local Address:Port   Peer Address:Port
+        ESTAB   10.0.0.5:8080        10.0.0.10:53214
+        ESTAB   10.0.0.5:8080        10.0.0.11:53215
+        ```
+        - ESTAB = ESTABLISHED = TCP 연결이 정상적으로 수립되어 통신할 수 있는 상태
+- TCP 상태 (State) 필터링
+    - 특정 TCP 상태만 필터링 가능
+        - `ss -tan state established`
+    - LISTEN: 서버가 연결을 기다리고 있는 상태
+    - SYN-SENT
+    - SYN-RECV
+    - ESTABLISHED: TCP 연결이 정상적으로 수립된 상태
+    - FIN-WAIT-1
+    - FIN-WAIT-2
+    - TIME-WAIT: TCP 연결이 종료된 후 일정 시간 동안 유지되는 상태
+        - 짧은 TCP 연결을 매우 많이 생성하는 웹 서버에서는 TIME-WAIT가 많이 나타날 수 있음
+    - CLOSE-WAIT: 상대방이 연결을 종료했지만 로컬 프로그램이 아직 소켓을 닫지 않은 상태
+        - 특정 애플리케이션에서 CLOSE-WAIT가 계속 증가한다면 애플리케이션이 연결을 제대로 종료하지 않는 문제를 의심
+    - LAST-ACK
+    - CLOSED
+- 포트 필터링
+    - 포트 조건을 사용해서 원하는 소켓만 확인 가능
+    - sport = source port, 출발지 포트
+    - dport = destination port, 목적지 포트
+    - `ss -tn '( sport = :8080 or dport = :8080 )'`
+
 <br>
 
 ---
