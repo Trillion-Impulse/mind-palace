@@ -38,6 +38,12 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
     5. 검증 및 병합
         - 코드 리뷰, 테스트, 커밋 생성, PR(Pull Request) 생성 및 병합
 
+<br>
+
+---
+
+<br>
+
 # 웹
 
 ## 서버 구축 시 기술 스택을 선택하는 기준
