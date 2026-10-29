@@ -8,6 +8,36 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
 
 <br>
 
+# 개발 환경
+1. IDE
+2. ADE
+3. CLI / Terminal
+
+## ADE
+- Agentic Development Environment
+- AI 에이전트가 개발 작업을 수행하고, 개발자가 여러 에이전트의 작업을 지휘·관리·검토할 수 있도록 설계된 개발 환경
+
+### Orca
+- 여러 AI 코딩 에이전트를 한곳에서 실행하고 관리하는 데 초점을 둔 오픈소스 ADE
+- Claude Code나 Codex 같은 에이전트를 직접 대체하는 모델이 아니라, 이들을 실행하고 작업 공간을 관리하는 도구
+- 주요 기능
+    - Parallel Worktrees
+        - 병렬 작업
+        - 작업마다 독립된 Git 워크트리를 만들어 여러 에이전트가 같은 저장소에서 파일을 서로 덮어쓰지 않고 동시에 작업
+    - 여러 에이전트 통합 실행
+        - Claude Code, Codex, Cursor CLI, Gemini, OpenCode 등 지원되는 CLI 에이전트를 한 앱에서 실행하고 작업 상태를 확인 가능
+    - 코드 변경 사항 비교 및 리뷰
+        - 에이전트가 수정한 코드를 Diff 화면에서 확인하고, 특정 코드 줄에 리뷰 의견을 남겨 수정 작업을 다시 요청 가능
+    - 브라우저와 Design Mode
+        - 개발 중인 웹 화면을 브라우저에서 확인하고, 특정 UI 요소를 선택해 관련 HTML·CSS 정보와 화면 캡처를 에이전트에 전달 가능
+- 실제 사용 흐름
+    1. 저장소 연결
+    2. n개 워크트리 생성 및 AI Agent 할당
+    3. 같은 작업 지시
+    4. 결과 비교
+    5. 검증 및 병합
+        - 코드 리뷰, 테스트, 커밋 생성, PR(Pull Request) 생성 및 병합
+
 # 웹
 
 ## 서버 구축 시 기술 스택을 선택하는 기준
