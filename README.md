@@ -1908,6 +1908,26 @@ Miscellaneous learnings that haven’t found a place in major categories like "T
         - 웹쉘은 파일 업로드 취약점이나 탈취된 계정 등 다른 경로로도 설치 가능
     1. 공격자가 웹을 통해 서버를 제어하려고 시도
 
+## 평문, 암호문
+
+### 평문
+- 암호화되지 않은 원래의 데이터
+
+### 암호문
+- 암호화된 데이터
+
+### 흐름
+    ```
+                       평문
+                   (Plaintext)
+                  |           ↑
+       암호화    ——+—— 암호키   |     복호화
+    (Encryption)  |   (Key) ——+—— (Decryption)
+                  ↓           |
+                      암호문
+                   (Ciphertext)
+    ```
+
 <br>
 
 ---
